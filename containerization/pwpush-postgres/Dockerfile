@@ -12,10 +12,11 @@ RUN ln -fs /usr/share/zoneinfo/Europe/Paris > /etc/localtime
 RUN apt-get update -qq && \
     apt-get install -y --assume-yes build-essential libpq-dev git curl ruby2.7 ruby2.7-dev tzdata sqlite3 ruby-sqlite3 libsqlite3-dev zlib1g-dev nodejs yarnpkg && \
     cd /opt && \
-    git clone https://github.com/pglombardo/PasswordPusher.git && \
+    git clone https://github.com/andjelx/PasswordPusher.git && \
     touch ${APP_ROOT}/log/production.log && \
     cd ${APP_ROOT} && \
-    chown -R 1001:root ${APP_ROOT}
+    chown -R 1001:root ${APP_ROOT} && \
+    rm -rf /var/lib/apt/lists/*
 
 EXPOSE 5000
 
