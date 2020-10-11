@@ -18,7 +18,7 @@ RUN apt-get update -qq && \
     chown -R 1001:root ${APP_ROOT} && \
     rm -rf /var/lib/apt/lists/*
 
-EXPOSE 5000
+EXPOSE 8080
 
 RUN gem update --system
 RUN gem install bundler
